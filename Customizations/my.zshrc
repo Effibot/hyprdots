@@ -139,18 +139,13 @@ alias pa='pacman -Ss' # list availabe package
 alias pc='sudo pacman -Sc' # remove unused cache
 alias po='pacman -Qtdq | sudo pacman -Rns -' # remove unused packages, also try > pacman -Qqd | pacman -Rsu --print -
 alias vc='code' # gui code editor
+alias cat='bat'
+alias top='btop'
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-function find {
-    /usr/bin/find $1 -exec bat {} +
-}
-
-alias bathelp='bat --plain --language=help'
-help() {
-    "$@" --help 2>&1 | bathelp
-}
-export MANROFFOPT="-c"
+# source aliases file
+source ~/.aliases.sh
+# source functions file
+source ~/.functions.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

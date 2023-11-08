@@ -1,0 +1,128 @@
+{
+    // Window settings 
+    "window.menuBarVisibility": "visible",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "workbench.colorTheme": "Catppuccin-Mocha",
+    "workbench.editor.enablePreview": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "none",
+    // Editor settings
+    "editor.autoIndent": "full",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 3,
+    "editor.defaultFormatter": null,
+    "editor.fontFamily": "Maple Mono NF, MesloLGS NF, FiraCode NF Ret",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.letterSpacing": 0.1,
+    "editor.lineHeight": 18,
+    "editor.minimap.side": "right",
+    "editor.suggestSelection": "first",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.tabSize": 4,
+    // Security settings
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "security.workspace.trust.startupPrompt": "never",
+    "security.workspace.trust.enabled": false,
+    "extensions.autoUpdate": true,
+    "files.autoGuessEncoding": true,
+    // Git settings
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.openRepositoryInParentFolders": "always",
+    // Terminal settings
+    "terminal.external.linuxExec": "kitty",
+    "terminal.explorerKind": "both",
+    "terminal.sourceControlRepositoriesKind": "both",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "Maple Mono NF, MesloLGS NF, FiraCode NF Ret",
+    "terminal.integrated.fontSize": 13,
+    // Telemetry settings
+    "telemetry.telemetryLevel": "off",
+    // Python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        "editor.tabSize": 8,
+    },
+    "python.analysis.autoImportCompletions": true,
+    "pytgon.analysis.autoSearchPaths": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.extraPaths": [],
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.autoComplete.extraPaths": [],
+    "python.condaPath": "/home/effi/conda/bin/conda",
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    // Jupyter
+    "jupyter.askForKernelRestart": false,
+    "python.defaultInterpreterPath": "/home/effi/miniforge3/envs/jarpy/bin/python3",
+    "jupyter.askForRestart": false,
+    "jupyter.autoStartKernel": true,
+    "jupyter.interactiveWindow.codeLens.enabled": true,
+    "jupyter.interactiveWindow.cursorNavigation": true,
+    "notebook.lineNumbers": "on",
+    "notebook.output.fontFamily": "Fira Code Regular",
+    "notebook.output.scrolling": true,
+    "notebook.scrollBeyondLastLine": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    // Docker
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "docker.commands.attach": "${containerCommand} exec -it ${containerId} zsh",
+    "docker.commands.commit": "docker commit ${containerId} ${image}",
+    "docker.commands.inspect": "docker inspect ${containerId}",
+    "docker.commands.kill": "docker kill ${containerId}",
+    "docker.commands.logs": "docker logs ${containerId}",
+    "docker.commands.ps": "docker ps -a",
+    "docker.commands.pull": "docker pull ${image}",
+    "docker.commands.push": "docker push ${image}",
+    "docker.commands.rename": "docker rename ${containerId} ${containerName}",
+    "docker.commands.restart": "docker restart ${containerId}",
+    "docker.commands.rm": "docker rm ${containerId}",
+    "docker.commands.rmi": "docker rmi ${image}",
+    // Shell
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "bashIde.explainshellEndpoint": "http://localhost:5000",
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "workbench.colorCustomizations": {},
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    },
+    "cSpell.userWords": [
+        "rclpy",
+        "REUSEADDR"
+    ]
+}

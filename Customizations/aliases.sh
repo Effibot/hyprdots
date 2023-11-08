@@ -1,7 +1,8 @@
+#! /bin/bash
+
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias p10k="code ~/.p10k.zsh"
-alias cat="batcat"
 alias clc="clear"
 alias aliases="code ~/.aliases.sh"
 alias status="git status"
