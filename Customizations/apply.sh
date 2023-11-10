@@ -15,3 +15,6 @@ cp aliases.sh ~/.aliases.sh
 cp functions.sh ~/.functions.sh
 cp my.zshrc ~/.zshrc
 cp code_settings.json ~/.config/Code/User/settings.json
+cp neofetch_config.conf ~/.config/neofetch/config.conf
+# Copy matlab.desktop file
+cp matlab.desktop ~/.local/share/applications/matlab.desktop

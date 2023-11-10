@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+MimeType=text/x-matlab
+Exec=/usr/local/MATLAB/R2023/bin/matlab -desktop
+Name=MATLAB
+Icon=matlab
+Categories=Development;Math;Science
+Comment=Scientific computing environment
+StartupNotify=true
