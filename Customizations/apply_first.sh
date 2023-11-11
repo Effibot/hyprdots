@@ -14,3 +14,7 @@ fi
 cp my_apps_list.lst ../Scripts/custom_apps_list.lst
 # Copy the custom zshrc file to the config directory
 cp my.zshrc ../Configs/.zshrc
+# Copy the fnt restore list
+cp my_fonts_list.lst ../Scripts/restore_fnt.lst
+# Copy the restore etc script
+cp my_restore_etc.sh ../Scripts/restore_etc.sh

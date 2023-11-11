@@ -30,3 +30,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Copy the hyprland config
     cp hyprland ~/.config/hyprland
 fi
+
+# copy the zsh plugin list to the script folder
+cp my_zsh_plugins.lst ../Scripts/my_zsh_plugins.lst
+# run the zsh plugin installation script
+bash -c "cd ../Scripts && ./restore_zsh.sh"
