@@ -16,6 +16,7 @@ cp functions.sh ~/.functions.sh
 cp code_settings.json ~/.config/Code/User/settings.json
 cp neofetch_config.conf ~/.config/neofetch/config.conf
 cp kitty.conf ~/.config/kitty/kitty.conf
+cp my_windowrules.conf ~/.config/hypr/windowrules.conf
 
 # ask before copy the matlab config
 read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
@@ -41,7 +42,7 @@ read -p "Do you want to finalize the Docker installation? (y/n) " -n 1 -r && ech
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Finalize Docker Installation
     sudo groupadd docker
-    sudo usermod -aG docker $USER
+    sudo usermod -aG docker "$USER"
     sudo systemctl enable docker.service
     sudo systemctl enable containerd.service
 fi
@@ -51,7 +52,14 @@ read -p "Do you want to finalize the NordVPN installation? (y/n) " -n 1 -r && ec
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Finalize NordVPN Installation
     sudo groupadd -r nordvpn
-    sudo gpasswd -a $USER nordvpn
+    sudo gpasswd -a "$USER" nordvpn
     sudo systemctl enable nordvpnd.service
     sudo systemctl start nordvpnd.service
+fi
+
+# Finalize the VSCode installation adding the keyring option
+read -p "Do you want to finalize the VSCode installation adding the keyring option? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Finalize the VSCode installation adding the keyring option
+    python add_keyring.py
 fi
