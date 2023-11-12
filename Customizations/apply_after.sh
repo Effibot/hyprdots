@@ -35,3 +35,23 @@ fi
 cp my_zsh_plugins.lst ../Scripts/my_zsh_plugins.lst
 # run the zsh plugin installation script
 bash -c "cd ../Scripts && ./restore_zsh.sh"
+
+# Finalize Docker Installation
+read -p "Do you want to finalize the Docker installation? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Finalize Docker Installation
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo systemctl enable docker.service
+    sudo systemctl enable containerd.service
+fi
+
+# Finalize NordVPN Installation
+read -p "Do you want to finalize the NordVPN installation? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Finalize NordVPN Installation
+    sudo groupadd -r nordvpn
+    sudo gpasswd -a $USER nordvpn
+    sudo systemctl enable nordvpnd.service
+    sudo systemctl start nordvpnd.service
+fi
