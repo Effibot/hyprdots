@@ -17,6 +17,7 @@ cp code_settings.json ~/.config/Code/User/settings.json
 cp neofetch_config.conf ~/.config/neofetch/config.conf
 cp kitty.conf ~/.config/kitty/kitty.conf
 cp my_windowrules.conf ~/.config/hypr/windowrules.conf
+cp my_keybindings.conf ~/.config/hypr/keybindings.conf
 
 # ask before copy the matlab config
 read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
@@ -63,3 +64,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Finalize the VSCode installation adding the keyring option
     python add_keyring.py
 fi
+
+# Restore old configs to avoid git conflicts
+rm -f ../Scripts/custom_apps_list.lst
+mv ../Scripts/custom_apps_list.lst.bak ../Scripts/custom_apps_list.lst
+rm -f ../Configs/.zshrc
+mv ../Configs/.zshrc.bak ../Configs/.zshrc
+rm -f ../Scripts/restore_fnt.lst
+mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
+rm -f ../Scripts/restore_etc.sh
+mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
