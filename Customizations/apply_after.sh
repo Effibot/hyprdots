@@ -74,3 +74,9 @@ rm -f ../Scripts/restore_fnt.lst
 mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
 rm -f ../Scripts/restore_etc.sh
 mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
+
+# Set microsoft-edge as default browser
+read -p "Do you want to set microsoft-edge as default browser? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    xdg-settings set default-web-browser microsoft-edge.desktop
+fi
