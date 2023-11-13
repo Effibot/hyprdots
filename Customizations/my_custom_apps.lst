@@ -12,6 +12,8 @@ gamescope
 grim
 fcron
 iputils
+kate
+kcalc
 krita
 kwallet5
 microsoft-edge-stable-bin
@@ -26,6 +28,8 @@ jdk-openjdk
 jdk8-openjdk
 kcalc
 protontricks
+python-virtualenvwrapper
+python-black
 python-pip
 spicetify-cli
 spotify

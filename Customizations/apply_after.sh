@@ -34,7 +34,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # copy the zsh plugin list to the script folder
-cp my_zsh_plugins.lst ../Scripts/my_zsh_plugins.lst
+mv ../Scripts/restore_zsh.lst ../Scripts/restore_zsh.lst.bak
+cp my_restore_zsh.lst ../Scripts/restore_zsh.lst
 # run the zsh plugin installation script
 bash -c "cd ../Scripts && ./restore_zsh.sh"
 
@@ -74,9 +75,12 @@ rm -f ../Scripts/restore_fnt.lst
 mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
 rm -f ../Scripts/restore_etc.sh
 mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
+rm -f ../Scripts/restore_zsh.lst
+mv ../Scripts/restore_zsh.lst.bak ../Scripts/restore_zsh.lst
 
 # Set microsoft-edge as default browser
 read -p "Do you want to set microsoft-edge as default browser? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    unset BROWSER
     xdg-settings set default-web-browser microsoft-edge.desktop
 fi
