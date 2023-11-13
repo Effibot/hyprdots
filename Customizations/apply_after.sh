@@ -5,7 +5,7 @@
 
 # Assert that the script is run from the Customizations folder.
 
-if [ ! -f apply.sh ]; then
+if [ ! -f apply_after.sh ]; then
     echo "Please run this script from the Customizations folder."
     exit 1
 fi
@@ -66,8 +66,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Restore old configs to avoid git conflicts
-rm -f ../Scripts/custom_apps_list.lst
-mv ../Scripts/custom_apps_list.lst.bak ../Scripts/custom_apps_list.lst
+rm -f ../Scripts/custom_apps.lst
+mv ../Scripts/custom_apps.lst.bak ../Scripts/custom_apps.lst
 rm -f ../Configs/.zshrc
 mv ../Configs/.zshrc.bak ../Configs/.zshrc
 rm -f ../Scripts/restore_fnt.lst
