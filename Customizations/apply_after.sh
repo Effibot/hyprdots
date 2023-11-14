@@ -92,3 +92,6 @@ fi
 # Set configs for git
 git config --global user.email "andrea.efficace1@gmail.com"
 git config --global user.name "Effibot"
+
+# remember to change the sddm conf to auto login the keyring
+echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"
