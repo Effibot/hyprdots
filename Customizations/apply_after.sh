@@ -88,3 +88,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     unset BROWSER
     xdg-settings set default-web-browser microsoft-edge.desktop
 fi
+
+# Set configs for git
+git config --global user.email "andrea.efficace1@gmail.com"
+git config --global user.name "Effibot"
