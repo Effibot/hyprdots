@@ -23,6 +23,10 @@ cp my_keybindings.conf ~/.config/hypr/keybindings.conf
 read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Copy matlab.desktop file
+    # if the file not exist, create it
+    if [ ! -f matlab.desktop ]; then
+        touch matlab.desktop
+    fi
     cp matlab.desktop ~/.local/share/applications/matlab.desktop
 fi
 
@@ -30,7 +34,7 @@ fi
 read -p "Do you want to add the 'it' keyboard layout to the hyprland config? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Copy the hyprland config
-    cp hyprland ~/.config/hyprland
+    cp my_hyprland.conf ~/.config/hypr/hyprland.conf
 fi
 
 # copy the zsh plugin list to the script folder
@@ -60,11 +64,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Finalize the VSCode installation adding the keyring option
-read -p "Do you want to finalize the VSCode installation adding the keyring option? (y/n) " -n 1 -r && echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Finalize the VSCode installation adding the keyring option
-    python add_keyring.py
-fi
+#read -p "Do you want to finalize the VSCode installation adding the keyring option? (y/n) " -n 1 -r && echo
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+## Finalize the VSCode installation adding the keyring option
+#    python add_keyring.py
+#fi
 
 # Restore old configs to avoid git conflicts
 rm -f ../Scripts/custom_apps.lst
