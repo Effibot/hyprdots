@@ -3,8 +3,8 @@
 # script to install matlab
 
 # download the installer and put into the Downloads folder
-#wget https://www.mathworks.com/mpm/glnxa64/mpm -O ~/Downloads/mpm
-#chmod +x ~/Downloads/mpm
+wget https://www.mathworks.com/mpm/glnxa64/mpm -O ~/Downloads/mpm
+chmod +x ~/Downloads/mpm
 # enter the matlab version to install
 read -p "Enter the matlab version to install: " -n 5 -r && echo
 release="R${REPLY}"
