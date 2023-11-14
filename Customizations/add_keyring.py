@@ -8,7 +8,7 @@ argv_file = os.path.expanduser("~/.vscode/argv.json")
 with open(argv_file, "r") as f:
     argv = f.read()
 # find the last } and add the keyring option
-argv = argv[: argv.rfind("}")] + ', \t"password-store": "kwallet5"\n}'
+argv = argv[: argv.rfind("}")] + ', \t"password-store": "gnome"\n}'
 # Write the new json file
 with open(argv_file, "w") as f:
     f.write(argv)
