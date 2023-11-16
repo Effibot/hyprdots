@@ -20,17 +20,6 @@ cp my_windowrules.conf ~/.config/hypr/windowrules.conf
 cp my_keybindings.conf ~/.config/hypr/keybindings.conf
 cp my_keychain_conf.sh ~/.keychain_conf.sh
 
-# ask before copy the matlab config
-read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Copy matlab.desktop file
-    # if the file not exist, create it
-    if [ ! -f matlab.desktop ]; then
-        touch matlab.desktop
-    fi
-    cp matlab.desktop ~/.local/share/applications/matlab.desktop
-fi
-
 # add the 'it' keyboard layout to the hyprland config
 read -p "Do you want to add the 'it' keyboard layout to the hyprland config? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then

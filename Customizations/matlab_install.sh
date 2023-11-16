@@ -20,3 +20,13 @@ ${addons}
 rm -f ~/Downloads/mpm
 # make symlink to the matlab executable
 #sudo ln -s /usr/local/MATLAB/"${release}"/bin/matlab /usr/local/bin/matlab
+# ask before copy the matlab config
+read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Copy matlab.desktop file
+    # if the file not exist, create it
+    if [ ! -f matlab.desktop ]; then
+        touch matlab.desktop
+    fi
+    cp matlab.desktop ~/.local/share/applications/matlab.desktop
+fi
