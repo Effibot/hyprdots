@@ -6,7 +6,7 @@
 wget https://www.mathworks.com/mpm/glnxa64/mpm -O ~/Downloads/mpm
 chmod +x ~/Downloads/mpm
 # enter the matlab version to install
-read -p "Enter the matlab version to install: " -n 5 -r && echo
+read -p "Enter the matlab version to install: " -r && echo
 release="R${REPLY}"
 # convert addons in the lst file to a string
 addons=$(cat matlab_addons.lst | tr '\n' ' ')
@@ -17,5 +17,6 @@ sudo ./mpm install --release=${release} \
 MATLAB \
 ${addons}
 "
+rm -f ~/Downloads/mpm
 # make symlink to the matlab executable
-sudo ln -s /usr/local/MATLAB/"${release}"/bin/matlab /usr/local/bin/matlab
+#sudo ln -s /usr/local/MATLAB/"${release}"/bin/matlab /usr/local/bin/matlab
