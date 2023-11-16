@@ -19,6 +19,7 @@ cp kitty.conf ~/.config/kitty/kitty.conf
 cp my_windowrules.conf ~/.config/hypr/windowrules.conf
 cp my_keybindings.conf ~/.config/hypr/keybindings.conf
 cp my_keychain_conf.sh ~/.keychain_conf.sh
+
 # ask before copy the matlab config
 read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -87,17 +88,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
 fi
 
-# Restore old configs to avoid git conflicts
-rm -f ../Scripts/custom_apps.lst
-mv ../Scripts/custom_apps.lst.bak ../Scripts/custom_apps.lst
-rm -f ../Configs/.zshrc
-mv ../Configs/.zshrc.bak ../Configs/.zshrc
-rm -f ../Scripts/restore_fnt.lst
-mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
-rm -f ../Scripts/restore_etc.sh
-mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
-rm -f ../Scripts/restore_zsh.lst
-mv ../Scripts/restore_zsh.lst.bak ../Scripts/restore_zsh.lst
+# Create python virtual environment
+pyenv=~/venv/jarpy
+mkdir -p "$pyenv"
+virtualenv "$pyenv" --system-site-packages
+# Install python packages
+# shellcheck source=/dev/null
+source "$pyenv"/bin/activate
+pip install -r requirements.txt
+deactivate
 
 # Set microsoft-edge as default browser
 read -p "Do you want to set microsoft-edge as default browser? (y/n) " -n 1 -r && echo
@@ -110,8 +109,20 @@ fi
 git config --global user.email "andrea.efficace1@gmail.com"
 git config --global user.name "Effibot"
 
+# change spotify permissions for spicetify compatibility
+sudo chmod 777 /opt/spotify -R
+
+# Restore old configs to avoid git conflicts
+rm -f ../Scripts/custom_apps.lst
+mv ../Scripts/custom_apps.lst.bak ../Scripts/custom_apps.lst
+rm -f ../Configs/.zshrc
+mv ../Configs/.zshrc.bak ../Configs/.zshrc
+rm -f ../Scripts/restore_fnt.lst
+mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
+rm -f ../Scripts/restore_etc.sh
+mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
+rm -f ../Scripts/restore_zsh.lst
+mv ../Scripts/restore_zsh.lst.bak ../Scripts/restore_zsh.lst
+
 # remember to change the sddm conf to auto login the keyring
 echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"
-
-# change sporify permissions for spicetify compatibility
-sudo chmod 777 /opt/spotify -R
