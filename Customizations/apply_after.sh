@@ -63,12 +63,29 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo systemctl start nordvpnd.service
 fi
 
+# Ask for ssh key generation
+read -p "Do you want to generate a new ssh key? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Generate a new ssh key
+    read -p "Insert the email for the ssh key: " -r email && echo
+    ssh-keygen -t ed25519 -C "$email"
+    # Add key to the ssh agent
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+fi
+
 # Finalize the VSCode installation adding the keyring option
-#read -p "Do you want to finalize the VSCode installation adding the keyring option? (y/n) " -n 1 -r && echo
-#if [[ $REPLY =~ ^[Yy]$ ]]; then
-## Finalize the VSCode installation adding the keyring option
-#    python add_keyring.py
-#fi
+read -p "Do you want to finalize the VSCode installation adding the keyring option? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Finalize the VSCode installation adding the keyring option
+    if [[ -f "$HOME/.vscode/argv.json" ]]; then
+        echo "The file argv.json already exists, adding the keyring option"
+    else
+        touch "$HOME/.vscode/argv.json"
+    fi
+    # look for the last } in the file, and add "password-store": "gnome" before it
+    sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
+fi
 
 # Restore old configs to avoid git conflicts
 rm -f ../Scripts/custom_apps.lst
@@ -95,3 +112,6 @@ git config --global user.name "Effibot"
 
 # remember to change the sddm conf to auto login the keyring
 echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"
+
+# change sporify permissions for spicetify compatibility
+sudo chmod 777 /opt/spotify -R
