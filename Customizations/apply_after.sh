@@ -18,7 +18,7 @@ cp neofetch_config.conf ~/.config/neofetch/config.conf
 cp kitty.conf ~/.config/kitty/kitty.conf
 cp my_windowrules.conf ~/.config/hypr/windowrules.conf
 cp my_keybindings.conf ~/.config/hypr/keybindings.conf
-
+cp my_keychain_conf.sh ~/.keychain_conf.sh
 # ask before copy the matlab config
 read -p "Do you want to copy the matlab config? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
