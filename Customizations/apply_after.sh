@@ -83,6 +83,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "The file argv.json already exists, adding the keyring option"
     else
         touch "$HOME/.vscode/argv.json"
+        echo "{}" >"$HOME/.vscode/argv.json"
     fi
     # look for the last } in the file, and add "password-store": "gnome" before it
     sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
