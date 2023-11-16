@@ -1,6 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+# source keychain file
+source ~/.keychain_conf.sh
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -146,8 +150,6 @@ alias top='btop'
 source ~/.aliases.sh
 # source functions file
 source ~/.functions.sh
-# source keychain file
-source ~/.keychain_conf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
