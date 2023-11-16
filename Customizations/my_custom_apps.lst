@@ -7,11 +7,12 @@ docker
 docker-compose
 eog
 emote
+fcron
 gamemode
 gamescope
 gnome-keyring
 grim
-fcron
+github-cli
 iputils
 kate
 kcalc
