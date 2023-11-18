@@ -76,7 +76,7 @@
     ],
     // Jupyter
     "jupyter.askForKernelRestart": false,
-    "python.defaultInterpreterPath": "/home/effi/miniforge3/envs/jarpy/bin/python3",
+    "python.defaultInterpreterPath": "~/venv/jarpy/bin",
     "jupyter.askForRestart": false,
     "jupyter.autoStartKernel": true,
     "jupyter.interactiveWindow.codeLens.enabled": true,

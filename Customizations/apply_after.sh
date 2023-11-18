@@ -78,15 +78,18 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
 fi
 
-# Create python virtual environment
-pyenv=~/venv/jarpy
-mkdir -p "$pyenv"
-virtualenv "$pyenv" --system-site-packages
-# Install python packages
-# shellcheck source=/dev/null
-source "$pyenv"/bin/activate
-pip install -r requirements.txt
-deactivate
+read "Do you want to create a Python Virtual Environment? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Create a Python Virtual Environment
+    pyenv=~/venv/jarpy
+    mkdir -p "$pyenv"
+    virtualenv "$pyenv" --system-site-packages
+    # Install python packages
+    # shellcheck source=/dev/null
+    source "$pyenv"/bin/activate
+    pip install -r requirements.txt
+    deactivate
+fi
 
 # Set microsoft-edge as default browser
 read -p "Do you want to set microsoft-edge as default browser? (y/n) " -n 1 -r && echo
@@ -96,8 +99,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Set configs for git
-git config --global user.email "andrea.efficace1@gmail.com"
-git config --global user.name "Effibot"
+read -p "Do you want to set configs for git? (y/n) " -n 1 -r && echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    git config --global user.email "andrea.efficace1@gmail.com"
+    git config --global user.name "Effibot"
+fi
 
 # change spotify permissions for spicetify compatibility
 sudo chmod 777 /opt/spotify -R
