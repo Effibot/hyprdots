@@ -78,7 +78,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
 fi
 
-read "Do you want to create a Python Virtual Environment? (y/n) " -n 1 -r && echo
+read -p "Do you want to create a Python Virtual Environment? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Create a Python Virtual Environment
     pyenv=~/venv/jarpy

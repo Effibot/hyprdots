@@ -24,9 +24,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
+    export EDITOR='nano'
 else
-  export EDITOR='nano'
+    export EDITOR='nano'
 fi
 
 # In case a command is not found, try to find the package that has it
@@ -51,9 +51,9 @@ function command_not_found_handler {
 
 # Detect the AUR wrapper
 if pacman -Qi yay &>/dev/null ; then
-   aurhelper="yay"
+    aurhelper="yay"
 elif pacman -Qi paru &>/dev/null ; then
-   aurhelper="paru"
+    aurhelper="paru"
 fi
 
 function in {
