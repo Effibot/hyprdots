@@ -1,5 +1,5 @@
 # source keychain file
-source ~/.keychain_conf.sh
+#source ~/.keychain_conf.sh
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -17,7 +17,7 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 # List of plugins used
-plugins=(git sudo ssh-agent python zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo python zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
 fpath+=${ZSH_CUSTOM:-${ZSH:-/usr/share/oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 

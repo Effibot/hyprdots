@@ -11,21 +11,19 @@ if [ ! -f apply_after.sh ]; then
 fi
 
 # Copy the dotfiles to the home directory
-cp aliases.sh ~/.aliases.sh
-cp functions.sh ~/.functions.sh
+if [ ! -e ~/.aliases.sh ]; then
+    cp aliases.sh ~/.aliases.sh
+fi
+if [ ! -e ~/.functions.sh ]; then
+    cp functions.sh ~/.functions.sh
+fi
 cp code_settings.json ~/.config/Code/User/settings.json
 cp neofetch_config.conf ~/.config/neofetch/config.conf
 cp kitty.conf ~/.config/kitty/kitty.conf
-cp my_windowrules.conf ~/.config/hypr/windowrules.conf
-cp my_keybindings.conf ~/.config/hypr/keybindings.conf
-cp my_keychain_conf.sh ~/.keychain_conf.sh
+#cp my_keychain_conf.sh ~/.keychain_conf.sh
 
-# add the 'it' keyboard layout to the hyprland config
-read -p "Do you want to add the 'it' keyboard layout to the hyprland config? (y/n) " -n 1 -r && echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Copy the hyprland config
-    cp my_hyprland.conf ~/.config/hypr/hyprland.conf
-fi
+# Apply customizations to Hyprland Configs
+cat my_userprefs.conf >>~/.config/hypr/userprefs.conf
 
 # copy the zsh plugin list to the script folder
 mv ../Scripts/restore_zsh.lst ../Scripts/restore_zsh.lst.bak
@@ -115,10 +113,10 @@ rm -f ../Configs/.zshrc
 mv ../Configs/.zshrc.bak ../Configs/.zshrc
 rm -f ../Scripts/restore_fnt.lst
 mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
-rm -f ../Scripts/restore_etc.sh
-mv ../Scripts/restore_etc.sh.bak ../Scripts/restore_etc.sh
+rm -f ../Scripts/install_pre.sh
+mv ../Scripts/install_pre.sh.bak ../Scripts/install_pre.sh
 rm -f ../Scripts/restore_zsh.lst
 mv ../Scripts/restore_zsh.lst.bak ../Scripts/restore_zsh.lst
 
 # remember to change the sddm conf to auto login the keyring
-echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"
+#echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"

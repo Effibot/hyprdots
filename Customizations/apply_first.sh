@@ -20,5 +20,5 @@ cp my.zshrc ../Configs/.zshrc
 mv ../Scripts/restore_fnt.lst ../Scripts/restore_fnt.lst.bak
 cp my_restore_fnt.lst ../Scripts/restore_fnt.lst
 # Copy the restore etc script
-mv ../Scripts/restore_etc.sh ../Scripts/restore_etc.sh.bak
-cp my_restore_etc.sh ../Scripts/restore_etc.sh
+mv ../Scripts/install_pre.sh ../Scripts/install_pre.sh.bak
+cp my_install_pre.sh ../Scripts/install_pre.sh
