@@ -65,6 +65,7 @@ function in {
     fi
 }
 
+
 # Helpful aliases
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
@@ -76,7 +77,20 @@ alias pl='$aurhelper -Qs' # list installed package
 alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias vc='code' # gui code editor
+alias vc='code --ozone-platform-hint=wayland --disable-gpu' # gui code editor
+
+# Handy change dir shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# Always mkdir a path (this doesn't inhibit functionality to make a single dir)
+alias mkdir='mkdir -p'
+
+# Fixes "Error opening terminal: xterm-kitty" when using the default kitty term to open some programs through ssh
+alias ssh='kitten ssh'
 alias cat='bat'
 alias top='btop'
 
