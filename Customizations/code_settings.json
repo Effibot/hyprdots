@@ -1,8 +1,8 @@
 {
-    // Window settings 
+    "workbench.colorTheme": "Tokyo Night Storm",
+    // Window settings
     "window.menuBarVisibility": "visible",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "workbench.colorTheme": "Catppuccin-Mocha",
     "workbench.editor.enablePreview": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -54,7 +54,7 @@
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
         "editor.tabSize": 8,
     },
