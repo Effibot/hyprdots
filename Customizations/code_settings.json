@@ -74,6 +74,7 @@
         "--profile",
         "black"
     ],
+"python.venvPath": "~/venv",
     // Jupyter
     "jupyter.askForKernelRestart": false,
     "python.defaultInterpreterPath": "~/venv/jarpy/bin",
