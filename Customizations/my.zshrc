@@ -91,8 +91,6 @@ alias mkdir='mkdir -p'
 
 # Fixes "Error opening terminal: xterm-kitty" when using the default kitty term to open some programs through ssh
 alias ssh='kitten ssh'
-alias cat='bat'
-alias top='btop'
 
 # source aliases file
 source ~/.aliases.sh
@@ -101,3 +99,6 @@ source ~/.functions.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zoxide
+eval "$(zoxide init zsh)"

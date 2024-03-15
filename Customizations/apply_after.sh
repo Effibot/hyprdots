@@ -10,27 +10,6 @@ if [ ! -f apply_after.sh ]; then
     exit 1
 fi
 
-# Copy the dotfiles to the home directory
-if [ ! -e ~/.aliases.sh ]; then
-    cp aliases.sh ~/.aliases.sh
-fi
-if [ ! -e ~/.functions.sh ]; then
-    cp functions.sh ~/.functions.sh
-fi
-cp code_settings.json ~/.config/Code/User/settings.json
-cp neofetch_config.conf ~/.config/neofetch/config.conf
-cp kitty.conf ~/.config/kitty/kitty.conf
-#cp my_keychain_conf.sh ~/.keychain_conf.sh
-
-# Apply customizations to Hyprland Configs
-cat my_userprefs.conf >>~/.config/hypr/userprefs.conf
-
-# copy the zsh plugin list to the script folder
-mv ../Scripts/restore_zsh.lst ../Scripts/restore_zsh.lst.bak
-cp my_restore_zsh.lst ../Scripts/restore_zsh.lst
-# run the zsh plugin installation script
-bash -c "cd ../Scripts && ./restore_zsh.sh"
-
 # Finalize Docker Installation
 read -p "Do you want to finalize the Docker installation? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -105,18 +84,3 @@ fi
 
 # change spotify permissions for spicetify compatibility
 sudo chmod 777 /opt/spotify -R
-
-# Restore old configs to avoid git conflicts
-rm -f ../Scripts/custom_apps.lst
-mv ../Scripts/custom_apps.lst.bak ../Scripts/custom_apps.lst
-rm -f ../Configs/.zshrc
-mv ../Configs/.zshrc.bak ../Configs/.zshrc
-rm -f ../Scripts/restore_fnt.lst
-mv ../Scripts/restore_fnt.lst.bak ../Scripts/restore_fnt.lst
-rm -f ../Scripts/install_pre.sh
-mv ../Scripts/install_pre.sh.bak ../Scripts/install_pre.sh
-rm -f ../Scripts/restore_zsh.lst
-mv ../Scripts/restore_zsh.lst.bak ../Scripts/restore_zsh.lst
-
-# remember to change the sddm conf to auto login the keyring
-#echo "run sudo nano /etc/pam.d/sddm and change the second line removing the -"

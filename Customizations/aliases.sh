@@ -7,3 +7,6 @@ alias clc="clear"
 alias aliases="code ~/.aliases.sh"
 alias status="git status"
 alias jarpy="source ~/venv/jarpy/bin/activate"
+alias cd="z"
+alias cat='bat'
+alias top='btop'
