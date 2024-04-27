@@ -10,6 +10,16 @@ if [ ! -f apply_after.sh ]; then
     exit 1
 fi
 
+# remove images from fastfetch folder
+rm -f "$HOME"/.config/fastfetch/pngs/aisaka.png
+rm -f "$HOME"/.config/fastfetch/pngs/pochita.png
+rm -f "$HOME"/.config/fastfetch/pngs/ryuzaki.png
+rm -f "$HOME"/.config/fastfetch/pngs/loli.png
+
+# swap kitty config files
+rm -f "$HOME"/.config/kitty/kitty.conf
+cp kitty.conf "$HOME"/.config/kitty
+
 # Finalize Docker Installation
 read -p "Do you want to finalize the Docker installation? (y/n) " -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -51,8 +61,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         touch "$HOME/.vscode/argv.json"
         echo "{}" >"$HOME/.vscode/argv.json"
     fi
-    # look for the last } in the file, and add "password-store": "gnome" before it
-    sed -i '/}/i\    ,"password-store": "gnome",' "$HOME/.vscode/argv.json"
+    # look for the last } in the file, and add "password-store": "gnome-libsecret" before it
+    sed -i '/}/i\    ,"password-store": "gnome-libsecret",' "$HOME/.vscode/argv.json"
 fi
 
 read -p "Do you want to create a Python Virtual Environment? (y/n) " -n 1 -r && echo
@@ -81,6 +91,3 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     git config --global user.email "andrea.efficace1@gmail.com"
     git config --global user.name "Effibot"
 fi
-
-# change spotify permissions for spicetify compatibility
-sudo chmod 777 /opt/spotify -R

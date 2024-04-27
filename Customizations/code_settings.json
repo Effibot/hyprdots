@@ -1,7 +1,7 @@
 {
-    "workbench.colorTheme": "Tokyo Night Storm",
+    "workbench.colorTheme": "Catppuccin Mocha",
     // Window settings
-    "window.menuBarVisibility": "visible",
+    "window.menuBarVisibility": "toggle",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "workbench.editor.enablePreview": false,
     "workbench.editorAssociations": {
@@ -18,7 +18,7 @@
     "editor.cursorStyle": "line",
     "editor.cursorWidth": 3,
     "editor.defaultFormatter": null,
-    "editor.fontFamily": "Maple Mono NF, MesloLGS NF, FiraCode NF Ret",
+    "editor.fontFamily": "'Maple Mono NF', 'MesloLGS NF', 'FiraCode NF Ret'",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.formatOnPaste": true,
@@ -114,7 +114,6 @@
     "[dotenv]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
-    "workbench.colorCustomizations": {},
     "terminal.integrated.defaultProfile.linux": "zsh",
     "github.copilot.enable": {
         "*": true,

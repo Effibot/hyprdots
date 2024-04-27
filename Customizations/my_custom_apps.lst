@@ -1,50 +1,54 @@
+# --------------------------------------------------- // System
+downgrade                                             # downgrade packages
+trash-cli-git                                         # cli to manage trash files
+libinput-gestures                                     # actions touchpad gestures using libinput
+# gestures                                            # gui for libinput-gestures
+bat                                                   # cat substitute
+bat-extras                                            # extra utilities
+btop                                                  # top substitute
+gnome-keyring                                         # wallet to manage keys
+iputils                                               # networking monitoring tools (ping)
+zoxide                                                # cd jumper
 
-bat
-bat-extras
-btop
-cartridges
-docker
-docker-compose
-downgrade
-eog
-emote
-fcron
-gamemode
-gamescope
-gnome-keyring
-grim
-github-cli
-iputils
-kate
-kcalc
-keychain
-krita
-microsoft-edge-stable-bin
-neovim
-nordpass-bin
-nordvpn-bin
+# --------------------------------------------------- // Dependencies
+xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
+# emote                                                # emoji picker gtk3
+openssh                                                # ssh command
+openssl                                                # ssl command
+jdk-openjdk                                            # java(latest) jdk
+jdk8-openjdk                                           # java8 jdk
+python-virtualenvwrapper                               # python virtualenv command
+python-black                                           # python code formatter
+shfmt                                                  # shell code formatter
+sudo                                                   # sudo command
+uncrustify                                             # C/C++ code formatter
+
+# --------------------------------------------------- // Gaming
+steam                                                  # gaming platform
+gamemode                                               # daemon and library for game optimisations
+mangohud                                               # system performance overlay
+gamescope                                              # micro-compositor for gaming
+protontricks                                           # proton utilities
+
+# --------------------------------------------------- // Music
+spotify                                                # proprietary music streaming service
+spicetify-cli                                          # cli to customize spotify client
+
+# --------------------------------------------------- // Apps
+neovim                                                 # vim based text editor
+docker                                                 # container services 
+docker-compose                                         # docker compose utility
+github-cli                                             # gh commands suite
+github-desktop                                         # github desktop Apps
+microsoft-edge-stable-bin                              # browser
+nordpass-bin                                           # nordpass
+nordvpn-bin                                            # nordvpn
 okular
 ookla-speedtest-bin
-openssh
-openssl
-jdk-openjdk
-jdk8-openjdk
-kcalc
-protontricks
-python-virtualenvwrapper
-python-black
-python-pip
-spicetify-cli
-spotify
-steam
-shfmt
-sudo
+
+# --------------------------------------------------- // Fonts
 ttf-cascadia-code-nerd
 ttf-firacode-nerd
 ttf-maple
 ttf-meslo-nerd
 ttf-jetbrains-mono-nerd
-trash-cli-git
-uncrustify
-xdg-user-dirs
-zoxide
