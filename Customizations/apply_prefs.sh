@@ -32,11 +32,11 @@ cp code_settings.json "$HOME"/.config/Code/User/settings.json
 # add italian language?
 read -p "Do you want to add italian language? (y/n)" -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    cat my_userprefs.conf >> "$HOME"/config/hypr/userprefs.conf
+    cat my_userprefs.conf >> "$HOME"/.config/hypr/userprefs.conf
 fi
 
 # Installs on laptop?
 read -p "Installing on laptop? (y/m)" -n 1 -r && echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "monitor=eDP-1,1920x1080@60,0x0,1" >> "$HOME"/config/hypr/userprefs.conf
+    cat "monitor=eDP-1,1920x1080@60,0x0,1" >> "$HOME"/.config/hypr/userprefs.conf
 fi
